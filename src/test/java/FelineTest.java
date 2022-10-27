@@ -1,17 +1,10 @@
 import com.example.Feline;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.Arrays;
-@RunWith(MockitoJUnitRunner.class)
-public class FelineTest {
-    @Mock
-    Feline feline;
 
+public class FelineTest {
 
     @Test
     public void FelineCheckGetFamilyTest() {
@@ -37,14 +30,16 @@ public class FelineTest {
     @Test
     public void FelineCheckEatMeatTest() throws Exception {
         Feline feline = new Feline();
-        String eat[] = {"Животные", "Птицы", "Рыба"};
+        String[] eat = {"Животные", "Птицы", "Рыба"};
         String result = Arrays.toString(eat);
         Assert.assertEquals(result, feline.eatMeat().toString());
     }
 
     @Test
     public void FelineCheckGetFoodTest() throws Exception {
-        feline.getFood("Хищник");
-        Mockito.verify(feline).getFood("Хищник");
+        Feline feline = new Feline();
+        String[] eat = {"Животные", "Птицы", "Рыба"};
+        String result = Arrays.toString(eat);
+        Assert.assertEquals(result, feline.getFood("Хищник").toString());
     }
 }

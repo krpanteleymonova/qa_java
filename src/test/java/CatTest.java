@@ -2,13 +2,7 @@ import com.example.Cat;
 import com.example.Feline;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
-
 import java.util.Arrays;
-
-
 public class CatTest {
 
     @Test
@@ -20,11 +14,11 @@ public class CatTest {
     }
 
     @Test
-    public void CatCheckGetFoodTestWithtMock() throws Exception {
+    public void CatCheckGetFoodTestWithMock() throws Exception {
         Feline feline = new Feline();
         Cat cat = new Cat(feline);
         System.out.println(cat.getFood());
-        String eat[] = {"Животные", "Птицы", "Рыба"};
+        String[] eat = {"Животные", "Птицы", "Рыба"};
         String result = Arrays.toString(eat);
         Assert.assertEquals(result, cat.getFood().toString());
 
@@ -34,7 +28,7 @@ public class CatTest {
         Feline feline = new Feline();
         Cat cat = new Cat(feline);
         System.out.println(cat.getFood());
-        String eat[] = {"Животные", "Птицы", "Рыба"};
+        String[] eat = {"Животные", "Птицы", "Рыба"};
         String result = Arrays.toString(eat);
         Assert.assertEquals(result, cat.getFood().toString());
 
