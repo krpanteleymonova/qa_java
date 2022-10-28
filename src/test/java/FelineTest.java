@@ -8,28 +8,28 @@ import java.util.List;
 public class FelineTest {
 
     @Test
-    public void FelineGetFamilyCheckTest() {
+    public void felineGetFamilyCheckTest() {
         Feline feline = new Feline();
         System.out.println(feline.getFamily());
         Assert.assertEquals("Неправильно, должно быть 'Кошачьи'", "Кошачьи", feline.getFamily());
     }
 
     @Test
-    public void FelineGetKittensCheckTest() {
+    public void felineGetKittensCheckTest() {
         Feline feline = new Feline();
         System.out.println(feline.getKittens());
         Assert.assertEquals("Неправильно, должно быть '1'", 1, feline.getKittens());
     }
 
     @Test
-    public void FelineGetKittensIntCheckTest() {
+    public void felineGetKittensIntCheckTest() {
         Feline feline = new Feline();
         System.out.println(feline.getKittens(5));
         Assert.assertEquals("Неправильно, должно быть '5'", 5, feline.getKittens(5));
     }
 
     @Test
-    public void FelineEatMeatCheckTest() throws Exception {
+    public void felineEatMeatCheckTest() throws Exception {
         Feline feline = new Feline();
         List<String> eat = List.of("Животные", "Птицы", "Рыба");
         System.out.println(feline.eatMeat());
@@ -37,7 +37,7 @@ public class FelineTest {
     }
 
     @Test
-    public void FelineGetFoodCheckTest() throws Exception {
+    public void felineGetFoodCheckTest() throws Exception {
         Feline feline = new Feline();
         String[] eat = {"Животные", "Птицы", "Рыба"};
         String result = Arrays.toString(eat);

@@ -29,54 +29,61 @@ public class LionTest {
     @Mock
     private Feline feline;
 
-    @Parameterized.Parameters // добавили аннотацию
+    @Parameterized.Parameters
     public static Object[][] getGender() {
         return new Object[][]{
                 {"Самец", true},
                 {"Самка", false},
-                {"Неизвестно", false},
         };
     }
 
     @Test
-    public void LionDoesHaveManeCheckTest() {
-        Exception exception;
-        try {
+    public void lionDoesHaveManeCheckTest() throws Exception {
             Lion lion = new Lion(gender, feline);
             System.out.println(isMan);
             System.out.println(lion.doesHaveMane());
             Assert.assertEquals(isMan, lion.doesHaveMane());
-        } catch (Exception ex) {
-            exception = ex;
-            System.out.println(exception.getMessage());
-            Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка", exception.getMessage());
-        }
     }
 
     @Test
-    public void LionGetKittensCheckTest() {
-        Exception exception;
-        try {
+    public void lionGetKittensCheckTest() throws Exception {
             Lion lion = new Lion(gender, feline);
             Mockito.when(feline.getKittens()).thenReturn(1);
             System.out.println(lion.getKittens());
             Assert.assertEquals("Неправильно, должно быть '1'", 1, lion.getKittens());
-        } catch (Exception ex) {
-            exception = ex;
-            System.out.println(exception.getMessage());
-            Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка", exception.getMessage());
-        }
     }
 
     @Test
-    public void LionGetFoodCheckTest() {
-        Exception exception;
-        try {
+    public void lionGetFoodCheckTest() throws Exception {
             Lion lion = new Lion(gender, feline);
             List<String> eat = List.of("Животные", "Птицы", "Рыба");
             Mockito.when(feline.getFood("Хищник")).thenReturn(eat);
             System.out.println(lion.getFood());
             Assert.assertEquals("Некорректный тип питания!", eat, lion.getFood());
+    }
+
+    @Test
+    public void lionGetFoodCheckTestщдв() {
+        Exception exception;
+        try {
+            Lion lion = new Lion(gender, feline);
+
+        } catch (Exception ex) {
+            exception = ex;
+            System.out.println(exception.getMessage());
+            Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка", exception.getMessage());
+        }
+    }
+    @Test(expected = Exception.class)
+    public void constructorThrowsExceptionOnUnsupportedSex() throws Exception {
+        Lion lion = new Lion("Неизвестно", feline);
+    }
+
+    @Test
+    public void constructorThrowsExceptionOnUnsupportedSexMessage() {
+        Exception exception = null;
+        try {
+            Lion lion = new Lion("Неизвестно", feline);
         } catch (Exception ex) {
             exception = ex;
             System.out.println(exception.getMessage());
