@@ -64,9 +64,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="FelineTest" name="FelineCheckEatMeatTest" time="0.001"/>
+  <testcase classname="FelineTest" name="FelineCheckEatMeatTest" time="0"/>
   <testcase classname="FelineTest" name="FelineCheckGetKittensIntTest" time="0"/>
   <testcase classname="FelineTest" name="FelineCheckGetKittensTest" time="0"/>
-  <testcase classname="FelineTest" name="FelineCheckGetFoodTest" time="0"/>
+  <testcase classname="FelineTest" name="FelineCheckGetFoodTest" time="0.001"/>
   <testcase classname="FelineTest" name="FelineCheckGetFamilyTest" time="0"/>
 </testsuite>

@@ -3,6 +3,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class FelineTest {
 
@@ -12,7 +13,6 @@ public class FelineTest {
         System.out.println(feline.getFamily());
         Assert.assertEquals("Неправильно, должно быть 'Кошачьи'", "Кошачьи", feline.getFamily());
     }
-
     @Test
     public void FelineCheckGetKittensTest() {
         Feline feline = new Feline();
@@ -30,9 +30,9 @@ public class FelineTest {
     @Test
     public void FelineCheckEatMeatTest() throws Exception {
         Feline feline = new Feline();
-        String[] eat = {"Животные", "Птицы", "Рыба"};
-        String result = Arrays.toString(eat);
-        Assert.assertEquals(result, feline.eatMeat().toString());
+        List<String> eat =List.of("Животные", "Птицы", "Рыба");
+        System.out.println(feline.eatMeat());
+        Assert.assertEquals("Некорректный тип питания!",eat, feline.eatMeat());
     }
 
     @Test
