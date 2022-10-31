@@ -62,20 +62,4 @@ public class LionTest {
             Assert.assertEquals("Некорректный тип питания!", eat, lion.getFood());
     }
 
-    @Test(expected = Exception.class)
-    public void constructorThrowsExceptionOnUnsupportedSex() throws Exception {
-        Lion lion = new Lion("Неизвестно", feline);
-    }
-
-    @Test
-    public void constructorThrowsExceptionOnUnsupportedSexMessage() {
-        Exception exception = null;
-        try {
-            Lion lion = new Lion("Неизвестно", feline);
-        } catch (Exception ex) {
-            exception = ex;
-            System.out.println(exception.getMessage());
-            Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка", exception.getMessage());
-        }
-    }
 }
