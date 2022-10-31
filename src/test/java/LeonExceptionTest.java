@@ -25,12 +25,10 @@ public class LeonExceptionTest {
             Lion lion = new Lion("Неизвестно", feline);
         } catch (Exception ex) {
             exception = ex;
-
         }
         Assert.assertNotNull(exception);
         Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка", exception.getMessage());
     }
-
 }
 
 

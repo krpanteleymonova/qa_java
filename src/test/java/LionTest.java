@@ -61,5 +61,4 @@ public class LionTest {
             System.out.println(lion.getFood());
             Assert.assertEquals("Некорректный тип питания!", eat, lion.getFood());
     }
-
 }
